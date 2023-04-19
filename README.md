@@ -30,13 +30,16 @@ To get more familiar, we are going to begin by doing some background reading.
 Next, we're going to reflect about who collected this data, and what's actually inside it.
 
 - Who collected and shared the CountLove data, and what do they do for a living? Please answer in 1-2 sentences(2 points)
-- Answer: 
+- Answer: Tommy Leung and Nathan Perkins are the two people who collect and share CountLove data. They are engineers and scientists who have a keen interest in civic responsibility and public policy. 
 
 - As Klein and D'Ignazio remind us, when it comes to data, "what gets counted counts." What types of demonstrations does CountLove include in their data, and what types do they exclude? (3 points)
+- Answer: CountLove counts publicdisplays of protest that are not part of regular business. By "regular business" they imply that any data that relates to awareness events, commemorative celebrations, historic reenactments, fundraising events, townhalls, or poilitical campaign rallies is not projected in CountLove data. 
 
 - How and where does CountLove get their data about the protests? Please answer in 2-3 sentences (2 points)
+- Answer: They collect data from newspaper and television sites on a daily basis. Most of the protest data come from these data/crawls. Apart from this, they have a software that consists of a python backend for crawling and categorizing articles. All the collected data is stored in a MySQL database and covers protest events in the United States from 20 January 2017 to 31 january 2021.
 
 - How does CountLove make their estimates about the number of people who attended a protest? What potential problems might arise from this method of estimation? Please answer in 3-4 sentences (4 points)
+- Answer:
 
 ## While You Code: Critical Analysis & Reflection
 
