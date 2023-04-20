@@ -39,7 +39,7 @@ Next, we're going to reflect about who collected this data, and what's actually 
 - Answer: They collect data from newspaper and television sites on a daily basis. Most of the protest data come from these data/crawls. Apart from this, they have a software that consists of a python backend for crawling and categorizing articles. All the collected data is stored in a MySQL database and covers protest events in the United States from 20 January 2017 to 31 january 2021.
 
 - How does CountLove make their estimates about the number of people who attended a protest? What potential problems might arise from this method of estimation? Please answer in 3-4 sentences (4 points)
-- Answer:
+- Answer: CountLove records the most conservative attendance number from the news articles that they link. They interpret “a dozen” as 10, “dozens” as 20, “hundreds” as 100, and so forth. If an article mentions a demonstration but does not include an attendance count, we note the demonstration but leave the count empty. This misrepresentation of count might leave out important information about the protest and the impact of the protest.
 
 ## While You Code: Critical Analysis & Reflection
 
