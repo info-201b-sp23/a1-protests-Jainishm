@@ -230,3 +230,162 @@ trimws(" hello ")
 
 # Congrats! You're finished. Don't forget to save, push all changes to GitHub,
 # and submit the link to your repository on Canvas!
+
+# ----------------------------------------------------------------------------------------------
+# Below are my answers to the above questions 
+
+#Part 1
+
+# 1.a
+install.packages("stringr")
+library(stringr)
+
+# 1.b
+protest_data <- read.csv("https://countlove.org/data/data.csv")
+#View(protest_data)
+
+# 1.c
+# column names are
+Date, Location, Attendees, Event..legacy..see.tags., Tags, Curated, Source, Total.articles
+
+# 1.d
+2018-02-15, Athens, GA, 100, Racial Injustice(Wrongful Conviction), Civil Rights;For racial justice;Against punishment, Yes, http://www.onlineathens.com/news/20180216/clarke-central-students-protest-discipline-of-schoolmate, 1
+
+# 1.e
+num_protests <- nrow(protest_data)
+
+# 1.f
+num_features <- ncol(protest_data)
+
+# Part 2
+
+# 2.a
+num_attendees <- protest_data$Attendees
+#num_attendees
+
+# 2.b
+min_attendees <- min(protest_data$Attendees, na.rm = TRUE)
+#min_attendees
+
+# 2.c
+max_attendees <- max(protest_data$Attendees, na.rm = TRUE)
+
+# 2.d
+mean_attendees <- mean(protest_data$Attendees, na.rm = TRUE)
+mean_attendees
+# 2.e
+median_attendees <- median(protest_data$Attendees, na.rm = TRUE)
+median_attendees
+# 2.f
+difference_attendees <- mean_attendees - median_attendees
+
+# part 3
+
+# 3.a
+locations <- protest_data$Location
+
+# 3.b
+num_locations <- length(unique(protest_data$Location))
+
+# 3.c
+#library(dplr)
+rows <- str_detect(protest_data$Location, "WA")
+# Subset the protest_data dataframe to only include WA rows
+protests <- filter(protest_data, rows)
+# Count the number of rows in the subset
+num_in_wa <- nrow(protests)
+
+# 3.d
+prop_in_wa <- num_in_wa / nrow(protest_data)
+
+# 3.e
+
+count_protests_in_location <- function(location) {
+  # Filter for protests in the given location
+  loc_protests <- filter(protest_data, str_detect(protest_data$Location, location, ignore_case = TRUE))
+  
+  # Count the number of protests in the filtered data
+  num_in_loc <- nrow(loc_protests)
+  
+  if (num_in_loc == 0) {
+    return(paste("Sorry, that location is not found."))
+  } else {
+    return(paste("There were", num_in_loc, "protests in", location, "."))
+  }
+}
+
+
+# 3.f
+dc_summary <- count_protests_in_location("Washington, DC")
+dc_summary
+
+# 3.g
+minneapolis_summary <- count_protests_in_location("Minneapolis, MN")
+
+# 3.h
+states <- str_sub(protest_data$Location, -2)
+
+# 3.i
+uniq_states <- unique(states)
+
+# 3.j
+
+state_summary <- sapply(uniq_states, function(state) {
+  count_protests_in_location(paste(state, collapse = ""))
+})
+
+# part 4
+
+# 4.a
+dates <- as.Date(protest_data$Date)
+
+# 4.b
+most_recent_protest <- max(as.Date(protest_data$Date))
+most_recent_protest
+
+# 4.c
+earliest_protest <- min(as.Date(protest_data$Date))
+
+# 4.d
+time_span <- as.Date(most_recent_protest) - as.Date(earliest_protest)
+
+# 4.e
+protests_in_2020 <- subset(dates, dates >= as.Date("2020-01-01") & dates <= as.Date("2020-12-31"))
+
+# 4.f
+protests_in_2019 <- subset(dates, dates >= as.Date("2019-01-01") & dates <= as.Date("2019-12-31"))
+
+# 4.g
+protests_in_2018 <- subset(dates, dates >= "2018-01-01" & dates <= "2018-12-31")
+
+# 4.h
+num_protests_in_2018 <- length(protests_in_2018)
+num_protests_in_2019 <- length(protests_in_2019)
+num_protests_in_2020 <- length(protests_in_2020)
+
+# Part 5
+
+# 5.a 
+purposes <- protest_data$Event..legacy..see.tags.
+
+# 5.b
+num_purposes <- length(unique(purposes))
+
+# 5.c
+high_level_purposes <- sub("\\s*\\(.*\\)", "", purposes)
+high_level_purposes
+
+# the below code uses the function gsub where the first character (here "@") is removed and every subsequent character is replaced with "".
+# therefore, the output is "melwalsh"
+gsub("@.*", "", "melwalsh@uw.edu")
+
+# The below function removes empty spaces before and after the given string. 
+# therefore the output is "hello".
+trimws(" hello ")
+
+# table 
+purposes <- as.character(protest_data$Event..legacy..see.tags.)
+high_level_purposes <- gsub("\\s*\\(.*?\\)", "", purposes)
+high_level_purposes <- trimws(high_level_purposes)
+table(high_level_purposes)
+View(table(high_level_purposes))
