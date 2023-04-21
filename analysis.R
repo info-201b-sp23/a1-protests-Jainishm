@@ -233,6 +233,11 @@ trimws(" hello ")
 
 # ----------------------------------------------------------------------------------------------
 # Below are my answers to the above questions 
+# cloning repository, adding changes, and pushing to repository
+git clone https://github.com/info-201b-sp23/a1-protests-Jainishm.git
+git add .
+git commit -m "analysis.r"
+git push
 
 #Part 1
 
