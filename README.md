@@ -44,16 +44,23 @@ Next, we're going to reflect about who collected this data, and what's actually 
 ## While You Code: Critical Analysis & Reflection
 
 - Reflection 1: Why do you think the mean is higher than the median? Which metric would you use in a report about this data, and why? Please answer in 2-3 sentences (2 points)
+- Answer: Since the mean is greater than the median, this implies that the data is skewed to the right. This means that there are fewer protest with large number of attendees. Therefore this pulls up the mean for the attendees.
 
 - Reflection 2: Before actually calculating the number of protests that occurred in 2018, 2019, 2020, record your guesses for the following questions. (1 point)
 
   Guess: Do you think there were more protests in 2019 than in 2018? Why or why not? Please answer in 1 or 2 sentences
+   - Answer: The protests in 2018 were primarily immigration or civil rights protests whereas in 2019, there were mainly environment protests. Therefore, there was no significant protest or data that would determine which year had the maximum number of protests. It could be possible that there were more protests in 2019 than 2018.
 
   Guess: Do you think there were more protests in 2020 than in 2019? Why or why not? Please answer in 1 or 2 sentences
+   - Answer: In the year the 2020 there were two major event - George Floyd protest and Covid-19. Therefore just by understanding the social state of the country I can say that there were more protests in 2020 than 2019.  The main reason is because there were significant event in the year 2020 than 2019. 
 
 - Reflection 3: Does the change in the number of protests from 2018 to 2019 to 2020 surprise you? Why or why not? What do you think explains the fluctuation? Please answer in 1 or 2 sentences (2 points)
+- Answer: No, the change in the number of protests from 2018 to 2019 to 2020 does not surprise me. This is because every year there are new events that cause a change in the economy/ status of the country. The year 2020 experienced major causes for protest as events in 2020 influenced the status of the country. In general, changes in political economy, government policies, and external factors can cause a change in the number of protests year-to-year. 
 
 - Reflection 4: What is the first and fourth most frequent category of protest? Do these frequencies align with your sense of the major protest movements in the U.S. in the last few years? Why or why not? (3 points)
+- Answer: First most frequent category of protest: Racial Injustice
+          Fourth most frequent category of protest: Immigration
+  These, to an extent, align with my thought of major protest movements. Racial injectice relates more towards events in 2019-2020 whereas immigration represents the time when there were protests to improve the lives of immigrant communities. The timeline of these events play a crucial role in determining the number of protests in each category.
 
 ## After You Code: Critical Analysis & Reflection
 
